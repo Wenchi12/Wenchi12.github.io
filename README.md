@@ -13,7 +13,7 @@ Welcome to my Full Stack Developer Portfolio. This repository showcases my skill
 
 ## 🌐 Live Portfolio
 Check out my portfolio live here:  
-[https://Wenchi12.github.io](https://Wenchi12.github.io)
+[View Personal Portfolio](https://wenchi12.github.io/projects/personal-portfolio/)
 
 ---
 
