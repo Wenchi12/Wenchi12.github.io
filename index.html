@@ -4,70 +4,260 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wenchi | Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-  <header>
-    <h1>Oliver Silawo</h1>
-    <p>Full Stack Developer | PHP, MySQL | HTML, CSS, JavaScript, React</p>
-    <a href="#projects" class="btn">View Projects</a>
-  </header>
-
-  <nav>
-    <div class="navbar">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <nav class="navbar">
+    <div class="nav-wrapper">
+        <a href="#" class="logo">
+            <span>Oliver Silawo</span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#writing" class="nav-link">Writing</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
   </nav>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am a full stack developer building modern, scalable web applications. I specialize in backend systems, APIs, and responsive frontends.</p>
-    </section>
+  <section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Hi, I'm Oliver Silawo</h1>
+            <p class="tagline">A passionate full-stack developer crafting modern web experiences with clean code and innovative solutions.</p>
+            <div class="hero-links">
+                <a href="#projects" class="link-btn">View My Work</a>
+                <a href="#contact" class="link-btn">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML5, CSS3, JavaScript</li>
-        <li>PHP, MySQL</li>
-        <li>React.js, Node.js</li>
-        <li>Git & GitHub</li>
-      </ul>
-    </section>
+  <section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+            <p>
+                I'm a junior frontend developer with 1.5 years of professional experience. I started with a coding bootcamp in 2024 at Manda Hill Excellence Hub, after my time learning at the institution was cut short, I started teaching myself HTML, CSS, and JavaScript for a year. I built projects, contributed to open source, and
+                then started a freelance campaign on LinkedIn where I have put my skills to the test, averaging 1 client per month since. My focus is React, TypeScript, and building interfaces that are easy to use.
+            </p>
+            <p>
+                I'm fascinated by performance optimization—especially why web apps get slow and how to fix them.
+                I spend time reading other people's code, writing about what I learn, and pushing myself to solve harder problems.
+            </p>
+            <p>Tools
+                I use every day include Git, Chrome DevTools, and Figma. I also have experience with Webpack and npm for building and publishing projects.
+                version control, debugging, and design collaboration are all crucial parts of my workflow.
+            </p>
+            <p>
+                Right now I'm diving into Next.js and exploring how to think about system design before jumping into code.
+            </p>
+            <p>
+                I am also trying to get myself to do more of Back-End development, I have a working knowledge of Node.js and Express, and I am currently learning MySQL and MongoDB. I want to be a well-rounded developer who can build full-stack applications and understand how the front-end and back-end work together.
+            </p>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Client Dashboard</h3>
-        <p>CRUD system with login authentication using PHP and MySQL.</p>
-        <a href="projects/client-dashboard/index.php" target="_blank">Live Demo</a>
-      </div>
-      <div class="project">
-        <h3>Crypto Dashboard</h3>
-        <p>React app fetching real-time crypto prices via API.</p>
-        <a href="projects/crypto-dashboard/index.html" target="_blank">Live Demo</a>
-      </div>
-    </section>
+            <div class="experience-box">
+                <h3>Experience</h3>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Freelance Front-End Developer</span>
+                        <span class="exp-company">LinkedIn</span>
+                    </div>
+                    <span class="exp-date">Jan 2024 - Present</span>
+                    <p>Building responsive, accessible web applications for clients on LinkedIn.</p>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Coding Bootcamp</span>
+                        <span class="exp-company">Manda Hill Excellence Hub</span>
+                    </div>
+                    <span class="exp-date">Dec 2024</span>
+                    <p>52-week intensive program. Built full-stack projects. Focus: frontend, databases, deployment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:oliversilawo@gmail.com">oliversilawo@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/Wenchi12" target="_blank">github.com/Wenchi12</a></p>
-    </section>
-  </main>
+  <section id="skills" class="skills">
+    <div class="container">
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Strong</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">JavaScript (ES6+)</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">CSS3</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Working Knowledge</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Webpack</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Chrome DevTools</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Currently Learning</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">System Design</span>
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">Web Performance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2026 Oliver Silawo. All rights reserved.</p>
+  <section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Client Dashboard</h3>
+                    <div class="project-meta">
+                        <span class="project-date">2024</span>
+                    </div>
+                </div>
+                <p class="project-description">A comprehensive CRUD system with login authentication built using PHP and MySQL. Features user management, data visualization, and secure API endpoints.</p>
+                <div class="project-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Tech Stack:</span>
+                        <span>PHP, MySQL, HTML5, CSS3, JavaScript</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Features:</span>
+                        <span>User authentication, CRUD operations, Responsive design</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="projects/client-dashboard/index.php" class="btn-link" target="_blank">Live Demo</a>
+                    <a href="https://github.com/Wenchi12/client-dashboard" class="btn-link" target="_blank">Source Code</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Crypto Dashboard</h3>
+                    <div class="project-meta">
+                        <span class="project-date">2024</span>
+                    </div>
+                </div>
+                <p class="project-description">A real-time cryptocurrency tracking application built with React. Fetches live data from crypto APIs and displays price charts, market trends, and portfolio tracking.</p>
+                <div class="project-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Tech Stack:</span>
+                        <span>React, JavaScript, CSS3, REST API</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Features:</span>
+                        <span>Real-time data, Interactive charts, Portfolio tracking</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="projects/crypto-dashboard/index.html" class="btn-link" target="_blank">Live Demo</a>
+                    <a href="https://github.com/Wenchi12/crypto-dashboard" class="btn-link" target="_blank">Source Code</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Personal Portfolio</h3>
+                    <div class="project-meta">
+                        <span class="project-date">2024</span>
+                    </div>
+                </div>
+                <p class="project-description">This responsive portfolio website showcasing my projects, skills, and experience. Built with modern web technologies and optimized for performance.</p>
+                <div class="project-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Tech Stack:</span>
+                        <span>HTML5, CSS3, JavaScript, Responsive Design</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Features:</span>
+                        <span>Responsive layout, Smooth animations, SEO optimized</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://wenchi12.github.io" class="btn-link" target="_blank">Live Demo</a>
+                    <a href="https://github.com/Wenchi12/wenchi12.github.io" class="btn-link" target="_blank">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="writing" class="writing">
+    <div class="container">
+        <h2 class="section-title">Writing</h2>
+        <div class="writing-grid">
+            <div class="writing-card">
+                <h3>Understanding React Hooks</h3>
+                <span class="post-date">March 15, 2024</span>
+                <p>A deep dive into React Hooks, exploring useState, useEffect, and custom hooks with practical examples.</p>
+                <a href="#" class="read-link">Read more →</a>
+            </div>
+            <div class="writing-card">
+                <h3>Web Performance Optimization</h3>
+                <span class="post-date">February 28, 2024</span>
+                <p>Essential techniques for optimizing web application performance, from code splitting to image optimization.</p>
+                <a href="#" class="read-link">Read more →</a>
+            </div>
+            <div class="writing-card">
+                <h3>Building Accessible Web Apps</h3>
+                <span class="post-date">January 20, 2024</span>
+                <p>Best practices for creating inclusive web applications that work for everyone, regardless of ability.</p>
+                <a href="#" class="read-link">Read more →</a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="contact-subtitle">I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas to life.</p>
+        <div class="contact-cta">
+            <a href="mailto:oliversilawo@gmail.com" class="btn-primary">Send Email</a>
+            <span class="contact-or">or</span>
+            <a href="https://github.com/Wenchi12" class="btn-secondary" target="_blank">View GitHub</a>
+        </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 Oliver Silawo. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Wenchi12" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/oliver-silawo" target="_blank">LinkedIn</a>
+                <a href="mailto:oliversilawo@gmail.com">Email</a>
+            </div>
+        </div>
+    </div>
   </footer>
 
   <script src="main.js"></script>
