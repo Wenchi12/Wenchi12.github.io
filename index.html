@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wenchi | Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -17,16 +14,19 @@
     <a href="#projects" class="btn">View Projects</a>
   </header>
 
-  <div class="bg-black text-green-400 p-10 text-3xl font-bold">
-    Tailwind is working.
-  </div>
-  
+  <nav>
+    <div class="navbar">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-  <nav class="navbar">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 
   <main>
@@ -70,7 +70,6 @@
     <p>© 2026 Oliver Silawo. All rights reserved.</p>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/smooth-scroll.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
