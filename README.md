@@ -7,7 +7,7 @@
 
 ---
 
-Welcome to my Frontend Developer Portfolio. This repository showcases my expertise in building scalable, performant web applications with modern React and TypeScript technologies. I specialize in creating exceptional user experiences through clean code, performance optimization, and thoughtful design.
+Welcome to my frontend developer portfolio. This repository highlights the work, tooling, and writing themes that best represent how I build: clean interfaces, practical architecture, and performance-aware product decisions.
 
 ---
 
@@ -51,53 +51,49 @@ Check out my full portfolio here:
 
 ---
 
-## 💼 Featured Projects
+## 💼 Selected Work
 
-### ClientPro Dashboard
-**React, TypeScript, PostgreSQL** | 2024
-- Comprehensive client management platform with CRUD operations and role-based authentication
-- Optimized for 10k+ records with virtual scrolling and memoization
-- **Impact**: 40% smaller bundle size, 65% faster Time to Interactive
+Some work in this portfolio is private, so I focus on the problem, the tradeoffs, and the outcome rather than linking to placeholder demos.
 
-### CryptoTracker Pro
+### Client Management Dashboard
+**React, TypeScript, Redux, PostgreSQL** | 2025
+- Internal dashboard for reporting workflows, records management, and day-to-day operations
+- Kept large tables responsive with virtualization and tighter control over rerenders
+- Reduced bundle weight during cleanup and improved reporting flow usability
+
+### Real-Time Crypto Tracker
 **React, Node.js, Socket.io** | 2023
-- Real-time cryptocurrency tracking with live price updates and portfolio management
-- WebSocket implementation for instant cross-client synchronization
-- First deep dive into async state management and race conditions
+- Built to practice live updates, portfolio views, and UI state that changes continuously
+- Used WebSockets to keep data fresh without letting stale state leak into the interface
+- Strengthened my understanding of async state, sockets, and failure cases
 
-### FinTech Analytics Platform
+### Financial Analytics Dashboard
 **React, TypeScript, Recharts** | 2024
-- Full-stack financial dashboard with real-time transaction analytics
-- Performance optimized for large datasets with advanced charting
-- Built for fintech operations with security and compliance in mind
+- Dashboard for exploring transaction trends, KPIs, and dense financial data
+- Focused on turning dense datasets into readable filters, summaries, and charts
+- Performance work brought initial load time from roughly 8 seconds to under 3 seconds
 
-### SaaS Analytics Hub
-**React, Redux, PostgreSQL** | 2024
-- Enterprise analytics platform with interactive data visualizations
-- Optimized load time from 8s to 2.3s using code splitting and lazy loading
-- Designed for SaaS applications with user behavior tracking
-
-### CollabTask Pro
+### Team Collaboration Workspace
 **React, Node.js, Socket.io** | 2023
-- Real-time team collaboration platform with task management and notifications
-- Full-stack application built during bootcamp with modern architecture
-- Mastered WebSocket communication and async state handling
+- Collaborative task and notification app designed to explore shared workspaces
+- Worked through optimistic updates, notification timing, and multi-user sync
+- Improved how I think about state ownership and real-time UX
 
-### 🔥 useLocalStorage Hook (Open Source)
+### useLocalStorage Hook
 **TypeScript, Jest, Rollup** | 2024
-- Production-ready React hook with SSR support and TypeScript definitions
-- 100+ weekly npm downloads with comprehensive testing
-- Learned semantic versioning, documentation, and open source maintenance
+- Reusable React hook for localStorage persistence with SSR-safe guards
+- Focused on preventing hydration issues and tightening the API surface
+- Helped me build better habits around packaging, testing, and documentation
 
 ---
 
-## 📝 Technical Writing
+## 📝 What I Write About
 
-I regularly write about development challenges, performance optimization, and best practices:
+I enjoy turning debugging sessions and performance investigations into clear notes:
 
-- **React Performance at Scale**: Virtual scrolling, rendering bottlenecks, and optimization metrics
-- **React Hooks Deep Dive**: Memory leaks, cleanup functions, and real-world examples
-- **CSS Debugging Mastery**: Chrome DevTools, layout issues, and performance profiling
+- **Why React apps feel slow at scale**: Virtualized lists, bottlenecks, and data flow decisions
+- **useEffect cleanup that actually prevents leaks**: Timers, listeners, and side effects that pile up quietly
+- **Debugging CSS without guessing**: DevTools-driven inspection for layout, paint, spacing, and stacking issues
 
 ---
 
@@ -106,6 +102,5 @@ I regularly write about development challenges, performance optimization, and be
 I'm always excited to work on challenging projects and collaborate with awesome teams. Whether you need a frontend developer for your next big idea or want to discuss performance optimization, let's chat!
 
 - **Email**: oliversilawo@gmail.com
-- **LinkedIn**: [Oliver Silawo](https://linkedin.com/in/oliver-silawo)
-- **GitHub**: [Wenchi12](https://github.com/Wenchi12)  
-- **GitHub:** [Wenchi12](https://github.com/Wenchi12)
+- **LinkedIn**: [Oliver Silawo](https://linkedin.com/in/oliver-silawo-702022254)
+- **GitHub**: [Wenchi12](https://github.com/Wenchi12)

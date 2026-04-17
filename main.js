@@ -1,51 +1,61 @@
-console.log("Portfolio Loaded Successfully");
+const menuToggle = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLinks = document.querySelectorAll(".nav-link");
+const revealItems = document.querySelectorAll(".reveal");
 
-// Fade-in animation for projects on scroll
-const projects = document.querySelectorAll('.project');
-
-// Initialize projects with animation state
-projects.forEach(project => {
-  project.style.opacity = '0';
-  project.style.transform = 'translateY(30px)';
-  project.style.transition = 'all 0.6s ease-in-out';
-});
-
-// Trigger animation on scroll
-window.addEventListener('scroll', () => {
-  projects.forEach(project => {
-    const rect = project.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      project.style.opacity = '1';
-      project.style.transform = 'translateY(0)';
+function setMenuState(isOpen) {
+    if (!menuToggle || !navMenu) {
+        return;
     }
-  });
-});
 
-// Menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+    menuToggle.classList.toggle("active", isOpen);
+    navMenu.classList.toggle("active", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-open", isOpen);
+}
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+        setMenuState(isOpen);
+    });
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => setMenuState(false));
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".navbar")) {
+            setMenuState(false);
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            setMenuState(false);
+        }
     });
 }
 
-// Close menu when link clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger?.classList.remove('active');
-        navMenu?.classList.remove('active');
-    });
-});
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
 
-// Close menu on outside click
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar')) {
-        hamburger?.classList.remove('active');
-        navMenu?.classList.remove('active');
-    }
-});
+                entry.target.classList.add("is-visible");
+                currentObserver.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.16,
+            rootMargin: "0px 0px -40px 0px",
+        }
+    );
 
+    revealItems.forEach((item) => observer.observe(item));
+} else {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+}

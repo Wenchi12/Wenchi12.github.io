@@ -3,396 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oliver Silawo">
-    <title>Oliver Silawo - Frontend Developer</title>
+    <meta name="description" content="Portfolio of Oliver Silawo, a frontend developer focused on React, TypeScript, performance, and accessible user experiences.">
+    <title>Oliver Silawo | Frontend Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-wrapper">
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 <span>Oliver Silawo</span>
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="primary-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#writing" class="nav-link">Writing</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button
+                class="hamburger"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="primary-menu"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Oliver Silawo</span></h1>
-                <p class="tagline">Frontend Developer crafting performant, user-focused interfaces with React & TypeScript</p>
-                <p class="hero-description">I build scalable web applications that deliver exceptional user experiences, combining modern technologies with performance optimization and clean code practices.</p>
-                <div class="hero-links">
-                    <a href="#projects" class="link-btn primary">View My Work</a>
-                    <a href="https://github.com/Wenchi12" class="link-btn">GitHub</a>
-                    <a href="https://linkedin.com/in/oliver-silawo-702022254" class="link-btn">LinkedIn</a>
-                    <a href="mailto:oliversilawo@gmail.com" class="link-btn">Email</a>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="eyebrow">Frontend Developer</p>
+                    <h1>
+                        Performance-minded interfaces built with
+                        <span class="highlight">React and TypeScript</span>
+                    </h1>
+                    <p class="tagline">
+                        I build fast, thoughtful web experiences that stay clear under real product pressure.
+                    </p>
+                    <p class="hero-description">
+                        My work sits at the intersection of clean UI, practical architecture, and performance debugging.
+                        I enjoy turning messy requirements into products that feel polished, reliable, and easy to use.
+                    </p>
+                    <div class="hero-links">
+                        <a href="#projects" class="link-btn primary">View Selected Work</a>
+                        <a href="https://github.com/Wenchi12" class="link-btn" target="_blank" rel="noreferrer">GitHub</a>
+                        <a href="https://linkedin.com/in/oliver-silawo-702022254" class="link-btn" target="_blank" rel="noreferrer">LinkedIn</a>
+                        <a href="mailto:oliversilawo@gmail.com" class="link-btn">Email</a>
+                    </div>
+                    <ul class="hero-points">
+                        <li>18+ months of hands-on frontend work</li>
+                        <li>Freelance client projects since June 2025</li>
+                        <li>Growing into full-stack systems with Node.js and SQL</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <p>
-                    I'm a passionate frontend developer with over 18 months of professional experience, currently pursuing degrees in Financial Technology at HKU and Computer Science at UoPeople.
-                </p>
-                <p>
-                    My journey began with a coding bootcamp at Manda Hill Excellence Hub in late 2024. After completing the program, I dedicated three months to mastering HTML, CSS, JavaScript, React, TypeScript, and Tailwind CSS. I built personal projects, contributed to open source, and launched a successful freelance career on LinkedIn, securing 1 client per month.
-                </p>
-                <p>
-                    I'm obsessed with performance optimization and understanding why web apps slow down. I constantly read code, write about my learnings, and tackle complex challenges. My daily toolkit includes Git, GitHub, Chrome DevTools, and Figma.
-                </p>
-                <p>
-                    I'm expanding into backend development with Node.js, Express, MySQL, and MongoDB to become a well-rounded full-stack developer who understands the complete application architecture.
-                </p>
-
-                <!-- Experience Section -->
-                <div class="experience-box">
-                    <h3>Professional Experience</h3>
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <span class="exp-title">Freelance Frontend Developer</span>
-                            <span class="exp-company">Self-Employed</span>
-                        </div>
-                        <span class="exp-date">June 2025 - Present</span>
-                        <p>Delivering responsive, accessible web applications for LinkedIn clients. Specializing in React and TypeScript solutions with exceptional UI/UX design.</p>
-                    </div>
-                    <div class="exp-item">
-                        <div class="exp-header">
-                            <span class="exp-title">Full-Stack Development Bootcamp</span>
-                            <span class="exp-company">Manda Hill Excellence Hub</span>
-                        </div>
-                        <span class="exp-date">December 2024</span>
-                        <p>52-week intensive program covering frontend, backend, databases, and deployment. Built multiple full-stack projects and gained hands-on experience with modern development practices.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>🚀 Core Technologies</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">JavaScript (ES6+)</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                        <span class="skill-tag">HTML5</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>⚙️ Backend & Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🛠️ Tools & Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Webpack</span>
-                        <span class="skill-tag">Vite</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Chrome DevTools</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>📈 Currently Exploring</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">System Design</span>
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Web Performance</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">Docker</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>ClientPro Dashboard</h3>
-                        <div class="project-meta">
-                            <span class="project-date">2024</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A comprehensive client management dashboard with CRUD operations, authentication, and role-based access control.
-                    </p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Stack:</span>
-                            <span>React, TypeScript, Recharts, Redux, PostgreSQL</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Challenge:</span>
-                            <span>Rendering 10k+ rows without freezing the UI. Solved with virtual scrolling and memoization.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Impact:</span>
-                            <span>Reduced JavaScript bundle by 40% and improved Time to Interactive by 65%.</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com" class="btn-link">GitHub</a>
-                        <a href="https://demo.example.com" class="btn-link">Live Demo</a>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>CryptoTracker Pro</h3>
-                        <div class="project-meta">
-                            <span class="project-date">2023</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Real-time cryptocurrency tracking application with live price updates, portfolio management, and interactive charts.
-                    </p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Stack:</span>
-                            <span>React, Node.js, Express, MongoDB, Socket.io</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Challenge:</span>
-                            <span>Real-time synchronization across multiple clients using WebSockets.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Learning:</span>
-                            <span>First experience with async state management and race condition handling.</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com" class="btn-link">GitHub</a>
-                        <a href="https://demo.example.com" class="btn-link">Live Demo</a>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>FinTech Analytics Platform</h3>
-                        <div class="project-meta">
-                            <span class="project-date">2024</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Full-stack financial analytics dashboard displaying real-time transaction data, user metrics, and performance insights for fintech operations.
-                    </p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Stack:</span>
-                            <span>React, TypeScript, Recharts, Redux, PostgreSQL</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Challenge:</span>
-                            <span>Rendering 10k+ data points without performance degradation.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Impact:</span>
-                            <span>Reduced JavaScript bundle by 40% and improved Time to Interactive by 65%.</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com" class="btn-link">GitHub</a>
-                        <a href="https://demo.example.com" class="btn-link">Live Demo</a>
-                    </div>
-                </article>
-
-
-                <!-- Project 4 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>SaaS Analytics Hub</h3>
-                        <div class="project-meta">
-                            <span class="project-date">2024</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Enterprise-grade analytics dashboard for SaaS applications, featuring interactive data visualizations, user behavior tracking, and performance metrics.
-                    </p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Stack:</span>
-                            <span>React, TypeScript, Recharts, Redux, PostgreSQL</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Challenge:</span>
-                            <span>Optimizing initial load time from 8 seconds to under 3 seconds.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Impact:</span>
-                            <span>Implemented code splitting and lazy loading, reducing bundle size by 40%.</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com" class="btn-link">GitHub</a>
-                        <a href="https://demo.example.com" class="btn-link">Live Demo</a>
-                    </div>
-                </article>
-
-                <!-- Project 5 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>CollabTask Pro</h3>
-                        <div class="project-meta">
-                            <span class="project-date">2023</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Real-time team collaboration platform with task management, deadline tracking, and instant notifications for seamless project coordination.
-                    </p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Stack:</span>
-                            <span>React, Node.js, Express, MongoDB, Socket.io</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Challenge:</span>
-                            <span>Implementing real-time synchronization across multiple users.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Learning:</span>
-                            <span>Mastered async state management and WebSocket communication.</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com" class="btn-link">GitHub</a>
-                        <a href="https://demo.example.com" class="btn-link">Live Demo</a>
-                    </div>
-                </article>
-
-                <!-- Project 6 -->
-                <article class="project-card featured">
-                    <div class="project-header">
-                        <h3>🔥 useLocalStorage Hook (Open Source)</h3>
-                        <div class="project-meta">
-                            <span class="project-date">2024</span>
-                            <span class="project-badge">100+ Weekly Downloads</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Production-ready React hook for localStorage persistence with SSR support, TypeScript definitions, and comprehensive testing. Published on npm.
-                    </p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Stack:</span>
-                            <span>TypeScript, Jest, React, Webpack, Rollup</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Challenge:</span>
-                            <span>Ensuring SSR compatibility and preventing hydration mismatches.</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Impact:</span>
-                            <span>100+ weekly downloads, teaching experience in testing and semantic versioning.</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com" class="btn-link">GitHub</a>
-                        <a href="https://npmjs.com" class="btn-link primary">npm Package</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Writing Section -->
-    <section id="writing" class="writing">
-        <div class="container">
-            <h2 class="section-title">Technical Writing</h2>
-            <p class="section-subtitle">Sharing knowledge about performance optimization, React patterns, and development best practices.</p>
-            <div class="writing-grid">
-                <article class="writing-card">
-                    <h3>React Performance: Why Your App Slows Down at Scale</h3>
-                    <p class="post-date">November 2024</p>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="about-content">
                     <p>
-                        Deep dive into rendering performance bottlenecks. Learn why 10k items cause lag, virtual scrolling solutions, and real before/after metrics.
+                        I am a frontend developer who cares deeply about usability, performance, and the small interface decisions
+                        that make software feel calm instead of confusing. React and TypeScript are where I am strongest, but I
+                        think in systems, not just components.
                     </p>
-                    <a href="#" class="read-link">Read Article →</a>
-                </article>
-
-                <article class="writing-card">
-                    <h3>Understanding React Hooks: useEffect Cleanup Functions</h3>
-                    <p class="post-date">September 2024</p>
                     <p>
-                        Preventing memory leaks and event listener issues. Real examples from building production React applications and open source libraries.
+                        My path into tech started with a full-stack bootcamp at Manda Hill Excellence Hub in late 2024. From there,
+                        I doubled down on HTML, CSS, JavaScript, React, and TypeScript through personal builds, open-source work,
+                        and freelance projects sourced through LinkedIn.
                     </p>
-                    <a href="#" class="read-link">Read Article →</a>
-                </article>
-
-                <article class="writing-card">
-                    <h3>Debugging CSS: Tools and Strategies That Actually Work</h3>
-                    <p class="post-date">July 2024</p>
                     <p>
-                        Chrome DevTools mastery for layout issues, paint timing, and performance problems that designers notice but developers miss.
+                        Today I am studying Financial Technology at HKU and Computer Science at UoPeople while continuing to sharpen
+                        my frontend craft. I also spend time learning backend tools like Node.js, Express, MySQL, and MongoDB so I
+                        can collaborate more effectively across the full application stack.
                     </p>
-                    <a href="#" class="read-link">Read Article →</a>
-                </article>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Build Something Amazing</h2>
-            <p class="contact-subtitle">Ready to bring your ideas to life with modern web technologies?</p>
-            <p class="contact-subtitle">I'm always excited to work on challenging projects and collaborate with awesome teams.</p>
-            <div class="contact-cta">
-                <a href="mailto:oliversilawo@gmail.com" class="btn-primary">Start a Conversation</a>
-                <span class="contact-or">or</span>
-                <a href="https://linkedin.com/in/oliver-silawo" class="btn-secondary">Connect on LinkedIn</a>
+                    <div class="experience-box reveal">
+                        <h3>Professional Experience</h3>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-title">Freelance Frontend Developer</span>
+                                <span class="exp-company">Self-employed</span>
+                            </div>
+                            <span class="exp-date">June 2025 - Present</span>
+                            <p>
+                                Building responsive, accessible interfaces for client work and translating business goals into clean,
+                                maintainable React and TypeScript implementations.
+                            </p>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-title">Full-Stack Development Bootcamp</span>
+                                <span class="exp-company">Manda Hill Excellence Hub</span>
+                            </div>
+                            <span class="exp-date">Completed December 2024</span>
+                            <p>
+                                Trained across frontend, backend, databases, and deployment while building practical projects and
+                                strengthening problem-solving habits for real product work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category reveal">
+                        <h3>Frontend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">JavaScript (ES6+)</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal">
+                        <h3>Backend and Data</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal">
+                        <h3>Tooling</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git and GitHub</span>
+                            <span class="skill-tag">Vite</span>
+                            <span class="skill-tag">Webpack</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Chrome DevTools</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal">
+                        <h3>Learning Now</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">Web Performance</span>
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Selected Work</h2>
+                <p class="section-subtitle">
+                    A mix of freelance, self-directed, and open-source work. Where code is private, I focus on the problem,
+                    the tradeoffs, and the outcome.
+                </p>
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-header">
+                            <div>
+                                <p class="project-status">Private client work</p>
+                                <h3>Client Management Dashboard</h3>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-date">2025</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            An internal dashboard for managing client records, reporting workflows, and daily team operations
+                            without overwhelming non-technical users.
+                        </p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Stack</span>
+                                <span>React, TypeScript, Redux, Recharts, PostgreSQL</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Focus</span>
+                                <span>Kept large tables responsive with virtualized rows and tighter control over rerenders.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Outcome</span>
+                                <span>Reduced bundle weight during cleanup and made reporting tasks faster to navigate.</span>
+                            </div>
+                        </div>
+                        <p class="project-note">Private build. Walkthrough available on request.</p>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-header">
+                            <div>
+                                <p class="project-status">Personal build</p>
+                                <h3>Real-Time Crypto Tracker</h3>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-date">2023</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A live market tracker built to practice portfolio views, streaming updates, and interface state
+                            that changes continuously.
+                        </p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Stack</span>
+                                <span>React, Node.js, Express, MongoDB, Socket.io</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Focus</span>
+                                <span>Handled WebSocket updates without letting stale data or race conditions leak into the UI.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Learning</span>
+                                <span>Strengthened my understanding of async state, sockets, and real-time failure states.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-header">
+                            <div>
+                                <p class="project-status">Product case study</p>
+                                <h3>Financial Analytics Dashboard</h3>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-date">2024</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A dashboard for exploring transaction trends, operational KPIs, and dense financial data through
+                            filters, summaries, and chart-driven storytelling.
+                        </p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Stack</span>
+                                <span>React, TypeScript, Recharts, Redux, PostgreSQL</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Focus</span>
+                                <span>Turned dense datasets into readable views that surfaced trends without burying users in tables.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Outcome</span>
+                                <span>Performance work brought initial load time from roughly 8 seconds to under 3 seconds.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-header">
+                            <div>
+                                <p class="project-status">Bootcamp build</p>
+                                <h3>Team Collaboration Workspace</h3>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-date">2023</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A collaborative task and notification app designed to explore shared workspaces, deadlines,
+                            and the UX of multi-user coordination.
+                        </p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Stack</span>
+                                <span>React, Node.js, Express, MongoDB, Socket.io</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Focus</span>
+                                <span>Worked through optimistic updates, notification timing, and keeping multiple users in sync.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Learning</span>
+                                <span>Made me think more carefully about state ownership and real-time user feedback.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card featured reveal">
+                        <div class="project-header">
+                            <div>
+                                <p class="project-status">Open-source utility</p>
+                                <h3>useLocalStorage Hook</h3>
+                            </div>
+                            <div class="project-meta">
+                                <span class="project-date">2024</span>
+                                <span class="project-badge">Featured</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A reusable React hook for localStorage persistence with SSR-safe guards, TypeScript support,
+                            and tests for behavior that can break easily in production.
+                        </p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Stack</span>
+                                <span>TypeScript, React, Jest, Rollup</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Focus</span>
+                                <span>Prevented hydration issues by isolating browser-only access and tightening the API surface.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Outcome</span>
+                                <span>Strengthened my habits around packaging, testing, and documenting reusable frontend utilities.</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Wenchi12" class="btn-link primary" target="_blank" rel="noreferrer">View GitHub Profile</a>
+                            <a href="#contact" class="btn-link">Ask About This Project</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="writing" class="writing">
+            <div class="container">
+                <h2 class="section-title">What I Write About</h2>
+                <p class="section-subtitle">
+                    I like turning debugging sessions and performance investigations into clear notes that other developers can use.
+                </p>
+                <div class="writing-grid">
+                    <article class="writing-card reveal">
+                        <p class="card-kicker">Notes in progress</p>
+                        <h3>Why React apps feel slow at scale</h3>
+                        <p>
+                            Rendering bottlenecks, virtualized lists, and the difference between a slow component tree and a
+                            slow data flow.
+                        </p>
+                    </article>
+
+                    <article class="writing-card reveal">
+                        <p class="card-kicker">Notes in progress</p>
+                        <h3>useEffect cleanup that actually prevents leaks</h3>
+                        <p>
+                            A practical breakdown of event listeners, timers, and side effects that quietly pile up if cleanup
+                            is treated as an afterthought.
+                        </p>
+                    </article>
+
+                    <article class="writing-card reveal">
+                        <p class="card-kicker">Notes in progress</p>
+                        <h3>Debugging CSS without guessing</h3>
+                        <p>
+                            How I use DevTools to inspect layout, paint, spacing, and stacking issues before touching the code.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Open to frontend roles and freelance work</h2>
+                <p class="contact-subtitle">
+                    If you want someone who cares about performance, maintainability, and polished interfaces, I would love to talk.
+                </p>
+                <div class="contact-cta">
+                    <a href="mailto:oliversilawo@gmail.com" class="btn-primary">Email Me</a>
+                    <a href="https://linkedin.com/in/oliver-silawo-702022254" class="btn-secondary" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy Oliver Silawo 2026</p>
+                <p>&copy; 2026 Oliver Silawo. Built with HTML, CSS, and JavaScript.</p>
                 <div class="footer-links">
-                    <a href="https://github.com/Wenchi12">GitHub</a>
-                    <a href="https://linkedin.com/in/oliversilawo">LinkedIn</a>
+                    <a href="https://github.com/Wenchi12" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/oliver-silawo-702022254" target="_blank" rel="noreferrer">LinkedIn</a>
                     <a href="mailto:oliversilawo@gmail.com">Email</a>
                 </div>
             </div>
