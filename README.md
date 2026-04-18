@@ -12,7 +12,8 @@ Welcome to my frontend developer portfolio. This repository highlights the work,
 ---
 
 ## 🌐 Live Portfolio
-Check out my full portfolio here:  
+
+Check out my full portfolio here:
 [View Portfolio](https://wenchi12.github.io/)
 
 ---
@@ -20,6 +21,7 @@ Check out my full portfolio here:
 ## 🚀 Technical Expertise
 
 ### Core Technologies
+
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -28,6 +30,8 @@ Check out my full portfolio here:
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
 ### Backend & Databases
+
+
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -35,6 +39,8 @@ Check out my full portfolio here:
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Tools & Frameworks
+
+
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -43,6 +49,8 @@ Check out my full portfolio here:
 ![Chrome DevTools](https://img.shields.io/badge/Chrome%20DevTools-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
 
 ### Currently Exploring
+
+
 ![System Design](https://img.shields.io/badge/System%20Design-FF6B6B?style=for-the-badge)
 ![React Native](https://img.shields.io/badge/React%20Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Web Performance](https://img.shields.io/badge/Web%20Performance-00D084?style=for-the-badge)
