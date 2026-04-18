@@ -55,31 +55,31 @@ Check out my full portfolio here:
 
 Some work in this portfolio is private, so I focus on the problem, the tradeoffs, and the outcome rather than linking to placeholder demos.
 
-### Client Management Dashboard
+### [Client Management Dashboard](./client-management-dashboard)
 **React, TypeScript, Redux, PostgreSQL** | 2025
 - Internal dashboard for reporting workflows, records management, and day-to-day operations
 - Kept large tables responsive with virtualization and tighter control over rerenders
 - Reduced bundle weight during cleanup and improved reporting flow usability
 
-### Real-Time Crypto Tracker
+### [Real-Time Crypto Tracker](./real-time-crypto-tracker)
 **React, Node.js, Socket.io** | 2023
 - Built to practice live updates, portfolio views, and UI state that changes continuously
 - Used WebSockets to keep data fresh without letting stale state leak into the interface
 - Strengthened my understanding of async state, sockets, and failure cases
 
-### Financial Analytics Dashboard
+### [Financial Analytics Dashboard](./financial-analytics-dashboard)
 **React, TypeScript, Recharts** | 2024
 - Dashboard for exploring transaction trends, KPIs, and dense financial data
 - Focused on turning dense datasets into readable filters, summaries, and charts
 - Performance work brought initial load time from roughly 8 seconds to under 3 seconds
 
-### Team Collaboration Workspace
+### [Team Collaboration Workspace](./team-collaboration-workspace)
 **React, Node.js, Socket.io** | 2023
 - Collaborative task and notification app designed to explore shared workspaces
 - Worked through optimistic updates, notification timing, and multi-user sync
 - Improved how I think about state ownership and real-time UX
 
-### useLocalStorage Hook
+### [useLocalStorage Hook](./use-local-storage-hook)
 **TypeScript, Jest, Rollup** | 2024
 - Reusable React hook for localStorage persistence with SSR-safe guards
 - Focused on preventing hydration issues and tightening the API surface
@@ -102,5 +102,5 @@ I enjoy turning debugging sessions and performance investigations into clear not
 I'm always excited to work on challenging projects and collaborate with awesome teams. Whether you need a frontend developer for your next big idea or want to discuss performance optimization, let's chat!
 
 - **Email**: oliversilawo@gmail.com
-- **LinkedIn**: [Oliver Silawo](https://linkedin.com/in/oliver-silawo-702022254)
+- **LinkedIn**: [Oliver Silawo](https://linkedin.com/in/oliver-silawo)
 - **GitHub**: [Wenchi12](https://github.com/Wenchi12)
