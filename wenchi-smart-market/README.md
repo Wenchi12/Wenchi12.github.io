@@ -45,7 +45,7 @@ npm run dev
 
 ### 3. USSD Simulator
 
-Open `ussd-simulator/simulator.html` in a browser.
+Open `ussd-simulator/wenchi_ussd_simulator.html` in a browser.
 
 ---
 

@@ -92,6 +92,22 @@ Some work in this portfolio is private, so I focus on the problem, the tradeoffs
 - Worked through optimistic updates, notification timing, and multi-user sync
 - Improved how I think about state ownership and real-time UX
 
+### [Wenchi Motor Insurance II](./wenchi-motor-insurance/Wenchi%20Motor%20Insurance%20II)
+
+**HTML, CSS, JavaScript, Node.js, Express, MySQL** | 2025
+
+- Motor insurance quote platform with a vanilla frontend and REST API backend
+- Built a multi-step quote journey with validation, calculation logic, and admin views
+- Packaged with setup docs, deployment notes, and a professional UI pass
+
+### [Wenchi Smart Market](./wenchi-smart-market/Wenchi%20Smart%20Market)
+
+**React, Vite, Tailwind CSS, Node.js, Express, Prisma** | 2025
+
+- Zambian marketplace prototype with web ordering and USSD access
+- Supports seller registration, product browsing, orders, and mock mobile-money flows
+- Includes a USSD simulator and backend-first project structure for practical demos
+
 ### [useLocalStorage Hook](./use-local-storage-hook)
 
 **TypeScript, Jest, Rollup** | 2024
