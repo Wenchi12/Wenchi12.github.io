@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wenchi Motor Insurance - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/local-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json" />
+  <!-- Local icon set mapped to the existing Font Awesome class names for offline use. -->
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="index.html" aria-label="Back to Wenchi Motor Insurance">
+        <img src="Logo 1.0.png" alt="Wenchi Motor Insurance Logo" class="logo-img">
+        <span class="logo-badge">Admin</span>
+      </a>
+      <!-- mobile menu toggle -->
+      <button class="nav-toggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Back to App</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Admin Container -->
+  <div class="admin-container">
+    <!-- Header -->
+    <div class="admin-header">
+      <h1><i class="fa-solid fa-chart-simple"></i> Dashboard</h1>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <label style="color:#fff;margin-right:6px;">Filter:</label>
+        <select id="filterStatus" style="padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#fff;">
+          <option value="all">All</option>
+          <option value="paid">Paid</option>
+          <option value="unpaid">Unpaid</option>
+        </select>
+        <button class="btn btn-secondary" onclick="loadQuotes()"><i class="fa-solid fa-rotate"></i> Refresh</button>
+        <button class="btn btn-secondary" id="exportCsvBtn"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <div class="stat-content">
+          <div class="stat-label">Total Quotes</div>
+          <div class="stat-value" id="totalQuotes">0</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+        <div class="stat-content">
+          <div class="stat-label">Total Premium Revenue</div>
+          <div class="stat-value">ZMW <span id="totalRevenue">0</span></div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-car-side"></i></div>
+        <div class="stat-content">
+          <div class="stat-label">Most Popular Coverage</div>
+          <div class="stat-value" id="popularCoverage">-</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="stat-content">
+          <div class="stat-label">Average Premium</div>
+          <div class="stat-value">ZMW <span id="avgPremium">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quotes Table -->
+    <div class="quotes-section">
+      <h2>All Quotes</h2>
+      <div class="table-wrapper">
+        <table id="quotesTable" class="quotes-table">
+          <thead>
+            <tr>
+              <th>Quote ID</th>
+              <th>Customer Name</th>
+              <th>Email</th>
+              <th>Vehicle Type</th>
+              <th>Market Value</th>
+              <th>Coverage</th>
+              <th>Premium (ZMW)</th>
+              <th>Status</th>
+              <th>Paid Ref</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="loading">
+              <td colspan="8" style="text-align: center; padding: 30px;">
+                <div class="spinner"></div>
+                Loading quotes...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- No Data Message -->
+    <div id="noData" style="text-align: center; padding: 40px; color: #999; display: none;">
+      <p>No quotes available yet</p>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/admin.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    </script>
+</body>
+</html>

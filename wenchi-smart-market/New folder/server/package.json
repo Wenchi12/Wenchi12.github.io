@@ -1,0 +1,21 @@
+{
+  "name": "wenchi-server",
+  "version": "0.1.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "prisma": "^5.15.0"
+  }
+}

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: wenchi_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wenchi
+      POSTGRES_PASSWORD: wenchi123
+      POSTGRES_DB: wenchi
+    ports:
+      - '5432:5432'
+    volumes:
+      - wenchi_db_data:/var/lib/postgresql/data
+
+volumes:
+  wenchi_db_data:

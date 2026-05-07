@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wenchi Smart Market — USSD Simulator</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f5f3; --bg2: #ebebea; --surface: #ffffff;
+    --text: #1a1a18; --muted: #5f5e5a; --hint: #888780;
+    --green: #3b6d11; --green-bg: #eaf3de; --green-border: rgba(59,109,17,0.3);
+    --info: #185fa5; --info-bg: #e6f1fb;
+    --danger: #a32d2d; --danger-bg: #fcebeb;
+    --border: rgba(26,26,24,0.15); --border2: rgba(26,26,24,0.28);
+    --mono: 'Courier New', Courier, monospace;
+    --sans: 'Helvetica Neue', Arial, sans-serif;
+    --r: 8px; --rl: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1e1e1c; --bg2: #2a2a28; --surface: #1e1e1c;
+      --text: #f0efe8; --muted: #b4b2a9; --hint: #888780;
+      --green: #97c459; --green-bg: #173404; --green-border: rgba(151,196,89,0.3);
+      --info: #85b7eb; --info-bg: #042c53;
+      --danger: #f09595; --danger-bg: #501313;
+      --border: rgba(240,239,232,0.13); --border2: rgba(240,239,232,0.25);
+    }
+  }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 2rem 1rem; }
+  header { text-align: center; margin-bottom: 2rem; }
+  header h1 { font-size: 20px; font-weight: 500; }
+  header p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  .wrap { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 700px; }
+
+  /* ── Phone ── */
+  .phone { width: 230px; flex-shrink: 0; background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 24px; padding: 1.25rem; display: flex; flex-direction: column; gap: 10px; }
+  .phone-label { font-size: 11px; font-weight: 500; color: var(--muted); text-align: center; letter-spacing: .05em; }
+  .screen { background: #111; border-radius: 10px; min-height: 150px; padding: 12px; font-family: var(--mono); font-size: 12px; color: #b8e0a0; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
+  .input-row { display: flex; gap: 6px; }
+  .ussd-input { flex: 1; font-family: var(--mono); font-size: 13px; background: var(--surface); border: 0.5px solid var(--border2); border-radius: var(--r); padding: 6px 10px; color: var(--text); outline: none; width: 120px;}
+  .ussd-input:focus { box-shadow: 0 0 0 2px rgba(24,95,165,0.25); }
+  .send-btn { font-size: 12px; padding: 0 12px; background: var(--green-bg); color: var(--green); border: 0.5px solid var(--green-border); border-radius: var(--r); cursor: pointer; font-weight: 500; white-space: nowrap; }
+  .keypad { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
+  .key { background: var(--surface); border: 0.5px solid var(--border2); border-radius: var(--r); padding: 8px 0; text-align: center; font-size: 13px; font-weight: 500; cursor: pointer; color: var(--text); user-select: none; transition: opacity .1s; }
+  .key:active { opacity: .6; }
+  .key.red { color: var(--danger); }
+  .key.green { color: var(--green); }
+  .reset-btn { font-size: 12px; cursor: pointer; color: var(--muted); background: none; border: 0.5px solid var(--border2); border-radius: var(--r); padding: 5px 10px; width: 100%; }
+
+  /* server URL bar */
+  .url-bar { display: flex; gap: 6px; align-items: center; }
+  .url-bar label { font-size: 11px; color: var(--hint); white-space: nowrap; }
+  .url-bar input { flex: 1; font-family: var(--mono); font-size: 11px; background: var(--surface); border: 0.5px solid var(--border2); border-radius: var(--r); padding: 4px 8px; color: var(--text); outline: none; }
+  .conn-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--hint); flex-shrink: 0; }
+  .conn-dot.ok { background: var(--green); }
+  .conn-dot.err { background: var(--danger); }
+
+  /* ── Right panel ── */
+  .panel { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 12px; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: var(--r); background: var(--info-bg); color: var(--info); font-family: var(--mono); }
+  .section-title { font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
+
+  .log { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--rl); padding: 1rem; font-size: 12px; font-family: var(--mono); min-height: 180px; max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 5px; }
+  .le { display: flex; gap: 8px; }
+  .le .ts { color: var(--hint); flex-shrink: 0; }
+  .le .in { color: var(--info); }
+  .le .out { color: var(--green); }
+  .le .err { color: var(--danger); }
+  .le .sys { color: var(--hint); font-style: italic; }
+
+  .products { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--rl); padding: 1rem; }
+  .product-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--r); padding: 8px 12px; font-size: 12px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+  .product-card:last-child { margin-bottom: 0; }
+  .p-name { font-weight: 500; color: var(--text); }
+  .p-meta { color: var(--muted); }
+  .badge-new { background: var(--green-bg); color: var(--green); font-size: 10px; padding: 2px 6px; border-radius: var(--r); }
+  .empty { color: var(--hint); font-size: 12px; text-align: center; padding: 1rem 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wenchi Smart Market</h1>
+  <p>USSD Simulator — connected to live backend</p>
+</header>
+
+<div class="wrap">
+  <div class="phone">
+    <div class="phone-label">WENCHI USSD SIM</div>
+    <div class="screen" id="screen">Dial *384# to start</div>
+    <div class="input-row">
+      <input class="ussd-input" id="ussd-input" placeholder="*384#" autocomplete="off" />
+      <button class="send-btn" onclick="handleSend()">SEND</button>
+    </div>
+    <div class="keypad">
+      <div class="key" onclick="pk('1')">1</div><div class="key" onclick="pk('2')">2</div><div class="key" onclick="pk('3')">3</div>
+      <div class="key" onclick="pk('4')">4</div><div class="key" onclick="pk('5')">5</div><div class="key" onclick="pk('6')">6</div>
+      <div class="key" onclick="pk('7')">7</div><div class="key" onclick="pk('8')">8</div><div class="key" onclick="pk('9')">9</div>
+      <div class="key red" onclick="pk('CLR')">CLR</div><div class="key" onclick="pk('0')">0</div>
+      <div class="key green" onclick="handleSend()">OK</div>
+    </div>
+    <div class="url-bar">
+      <label>API</label>
+      <input id="api-url" value="http://localhost:3000" />
+      <div class="conn-dot" id="conn-dot"></div>
+    </div>
+    <button class="reset-btn" onclick="resetSim()">Reset session</button>
+  </div>
+
+  <div class="panel">
+    <div>
+      <div id="state-badge" class="badge">idle</div>
+    </div>
+
+    <div>
+      <div class="section-title">Session log</div>
+      <div class="log" id="log"></div>
+    </div>
+
+    <div class="products" id="products-section">
+      <div class="section-title">Live product feed</div>
+      <div id="product-cards"><div class="empty">No products yet. List one via USSD.</div></div>
+      <button onclick="fetchProducts()" style="margin-top:8px;font-size:11px;cursor:pointer;color:var(--info);background:none;border:none;padding:0;">Refresh feed</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let phone = '260971234567';
+let sessionText = '';
+let connOk = false;
+
+const apiUrl = () => document.getElementById('api-url').value.replace(/\/$/, '');
+
+function ts() {
+  const d = new Date();
+  return [d.getHours(), d.getMinutes(), d.getSeconds()].map(n => String(n).padStart(2,'0')).join(':');
+}
+
+function log(type, msg) {
+  const el = document.getElementById('log');
+  const div = document.createElement('div');
+  div.className = 'le';
+  div.innerHTML = `<span class="ts">${ts()}</span><span class="${type}">[${type.toUpperCase()}]</span><span>${msg}</span>`;
+  el.appendChild(div);
+  el.scrollTop = el.scrollHeight;
+}
+
+function setScreen(text) {
+  document.getElementById('screen').textContent = text;
+}
+
+function setBadge(s) {
+  document.getElementById('state-badge').textContent = s;
+}
+
+async function pingServer() {
+  const dot = document.getElementById('conn-dot');
+  try {
+    const res = await fetch(`${apiUrl()}/health`, { signal: AbortSignal.timeout(2000) });
+    if (res.ok) { dot.className = 'conn-dot ok'; connOk = true; }
+    else { dot.className = 'conn-dot err'; connOk = false; }
+  } catch {
+    dot.className = 'conn-dot err'; connOk = false;
+  }
+}
+
+async function sendUSSD(input) {
+  const payload = { phoneNumber: phone, text: input, sessionId: `SIM-${phone}`, serviceCode: '*384#' };
+  log('in', input || '(open)');
+
+  if (!connOk) {
+    log('sys', 'Server offline — using local fallback');
+    return localFallback(input);
+  }
+
+  try {
+    const res = await fetch(`${apiUrl()}/api/ussd`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const raw = await res.text();
+    log('out', raw.replace(/^(CON|END) /, '').split('\n')[0]);
+
+    const isEnd = raw.startsWith('END');
+    const body = raw.replace(/^(CON|END) /, '');
+    setScreen(body);
+    setBadge(isEnd ? 'session ended' : 'awaiting input');
+    if (isEnd) { sessionText = ''; fetchProducts(); }
+    return isEnd;
+  } catch (e) {
+    log('err', `Network error: ${e.message}`);
+    setScreen('Could not reach server.\nCheck API URL and make sure\nthe backend is running.');
+    return true;
+  }
+}
+
+// ── Local fallback (mirrors backend state machine for offline demo) ──
+let localState = 'idle';
+let localData = {};
+let localProducts = [];
+
+function localFallback(input) {
+  const CON = t => { setScreen(t); setBadge('awaiting input'); return false; };
+  const END = t => { setScreen(t); setBadge('session ended'); sessionText = ''; return true; };
+
+  if (localState === 'idle') {
+    localState = 'main'; return CON('Welcome to Wenchi\n\n1. Register\n2. List Product\n3. My Products\n4. View Orders');
+  }
+  if (localState === 'main') {
+    if (input==='1'){localState='reg_name';return CON('Enter your full name:');}
+    if (input==='2'){localState='list_name';return CON('Enter product name:');}
+    if (input==='3'){localState='idle';return END(localProducts.length?'Your products:\n'+localProducts.map((p,i)=>`${i+1}. ${p.name} K${p.price}`).join('\n'):'No products yet.');}
+    if (input==='4'){localState='idle';return END('No orders yet.');}
+    return CON('Invalid.\n1. Register\n2. List Product\n3. My Products\n4. View Orders');
+  }
+  if (localState==='reg_name'){localData.name=input;localState='reg_loc';return CON('Enter your market/location:');}
+  if (localState==='reg_loc'){localState='idle';return END(`Registered!\nName: ${localData.name}\nLocation: ${input}`);}
+  if (localState==='list_name'){localData.name=input;localState='list_price';return CON('Enter price in Kwacha (K):');}
+  if (localState==='list_price'){if(isNaN(input)||+input<=0)return CON('Invalid price. Enter a number:');localData.price=input;localState='list_qty';return CON('Enter quantity available:');}
+  if (localState==='list_qty'){if(isNaN(input)||+input<=0)return CON('Invalid quantity. Enter a number:');localData.qty=input;localState='list_loc';return CON('Enter product location:');}
+  if (localState==='list_loc'){
+    const p={name:localData.name,price:localData.price,qty:localData.qty,location:input,ts:ts()};
+    localProducts.push(p);
+    renderLocalProducts();
+    localState='idle';
+    return END(`Listed!\n${p.name}\nK${p.price} | Qty: ${p.qty}\n${p.location}`);
+  }
+  localState='idle';
+  return END('Session expired. Dial *384# again.');
+}
+
+function renderLocalProducts() {
+  const c = document.getElementById('product-cards');
+  if (!localProducts.length) { c.innerHTML = '<div class="empty">No products yet.</div>'; return; }
+  c.innerHTML = localProducts.map((p,i) => `
+    <div class="product-card">
+      <div><span class="p-name">${p.name}</span> <span class="p-meta">· ${p.location}</span></div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span class="p-meta">K${p.price} qty:${p.qty}</span>
+        ${i===localProducts.length-1?'<span class="badge-new">new</span>':''}
+      </div>
+    </div>`).join('');
+}
+
+async function fetchProducts() {
+  if (!connOk) return;
+  try {
+    const res = await fetch(`${apiUrl()}/api/products`);
+    const json = await res.json();
+    if (!json.success) return;
+    const c = document.getElementById('product-cards');
+    if (!json.data.length) { c.innerHTML = '<div class="empty">No products yet. List one via USSD.</div>'; return; }
+    c.innerHTML = json.data.map((p, i) => `
+      <div class="product-card">
+        <div><span class="p-name">${p.name}</span> <span class="p-meta">· ${p.location}</span></div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span class="p-meta">K${p.price} qty:${p.quantity}</span>
+          ${i===0?'<span class="badge-new">new</span>':''}
+        </div>
+      </div>`).join('');
+  } catch {}
+}
+
+async function handleSend() {
+  const inp = document.getElementById('ussd-input');
+  const val = inp.value.trim();
+  if (!val) return;
+
+  if (val === '*384#') {
+    sessionText = '';
+    inp.value = '';
+    await pingServer();
+    await sendUSSD('');
+    return;
+  }
+
+  sessionText = sessionText ? sessionText + '*' + val : val;
+  inp.value = '';
+  await sendUSSD(sessionText);
+}
+
+function pk(k) {
+  const inp = document.getElementById('ussd-input');
+  if (k === 'CLR') { inp.value = inp.value.slice(0,-1); return; }
+  inp.value += k;
+}
+
+function resetSim() {
+  sessionText = ''; localState = 'idle'; localData = {};
+  setScreen('Dial *384# to start');
+  setBadge('idle');
+  document.getElementById('log').innerHTML = '';
+  document.getElementById('ussd-input').value = '';
+}
+
+document.getElementById('ussd-input').addEventListener('keydown', e => { if (e.key==='Enter') handleSend(); });
+document.getElementById('api-url').addEventListener('change', pingServer);
+
+pingServer();
+setInterval(pingServer, 10000);
+</script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wenchi Motor Insurance - Professional Coverage</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/local-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Local icon set mapped to the existing Font Awesome class names for offline use. -->
+  <link rel="manifest" href="manifest.json"/>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="index.html" aria-label="Wenchi Motor Insurance home">
+        <img src="Logo 1.0.png" alt="Wenchi Motor Insurance Logo" class="logo-img">
+      </a>
+      <!-- mobile menu toggle -->
+      <button class="nav-toggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#quote">Get Quote</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Your Trusted Motor Insurance Partner</h1>
+      <p>Get instant quotes for comprehensive motor insurance coverage with industry-leading rates</p>
+      <button class="btn btn-primary-large" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
+        Start Your Quote
+      </button>
+    </div>
+    <div class="hero-image">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="180" fill="#e8f0ff"/>
+        <rect x="120" y="150" width="160" height="80" fill="#0056b3" rx="8"/>
+        <circle cx="150" cy="210" r="12" fill="#fff"/>
+        <circle cx="250" cy="210" r="12" fill="#fff"/>
+        <path d="M 160 160 L 200 140 L 240 160" fill="#ffd700" stroke="#0056b3" stroke-width="2"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="section-header">
+      <h2>Why Choose Wenchi</h2>
+      <p>Experience insurance the way it should be</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Instant Quotes</h3>
+        <p>Get your insurance quote in seconds with our smart calculation engine</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+        <h3>Competitive Rates</h3>
+        <p>Best-in-class pricing tailored to your specific vehicle and coverage needs</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Easy Process</h3>
+        <p>Simple 3-step process - no complicated paperwork or hidden fees</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3>Mobile Ready</h3>
+        <p>Quote your insurance anytime, anywhere on any device</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section" id="quote">
+    <div class="quote-container">
+      <div class="quote-header">
+        <h2>Get Your Quote Today</h2>
+        <p>Fill in your details to receive an instant premium calculation</p>
+      </div>
+      <div class="form-wrapper">
+        <div class="progress-indicator">
+          <div class="progress-step active" data-step="1">
+            <div class="step-number">1</div>
+            <div class="step-label">Personal</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="2">
+            <div class="step-number">2</div>
+            <div class="step-label">Vehicle</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="3">
+            <div class="step-number">3</div>
+            <div class="step-label">Coverage</div>
+          </div>
+        </div>
+
+        <form id="quoteForm" class="quote-form">
+          <!-- Step 1: Personal Info -->
+          <div class="form-step active" data-step="1">
+            <h3>Step 1: Your Information</h3>
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <div class="input-wrapper">
+                <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                <input id="fullName" type="text" placeholder="John Doe" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <div class="input-wrapper">
+                <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+                <input id="email" type="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <div class="input-wrapper">
+                <span class="input-icon"><i class="fa-solid fa-phone"></i></span>
+                <input id="phone" type="tel" placeholder="+260 96 123 4567" required />
+              </div>
+            </div>
+            <button type="button" class="btn btn-next" onclick="nextStep(1)">Continue</button>
+          </div>
+
+          <!-- Step 2: Vehicle Details -->
+          <div class="form-step" data-step="2">
+            <h3>Step 2: Vehicle Details</h3>
+            <div class="form-group">
+              <label for="vehicleType">Vehicle Type *</label>
+              <div class="input-wrapper">
+                <span class="input-icon"><i class="fa-solid fa-car-side"></i></span>
+                <select id="vehicleType" required>
+                  <option value="">Select Vehicle Type</option>
+                  <option value="Car">Car (Sedan)</option>
+                  <option value="SUV">SUV</option>
+                  <option value="Truck">Truck</option>
+                  <option value="Van">Van</option>
+                  <option value="Motorcycle">Motorcycle</option>
+                  <option value="Bus">Bus</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="marketValue">Market Value (ZMW) *</label>
+              <div class="input-wrapper">
+                <span class="input-icon"><i class="fa-solid fa-money-bill-wave"></i></span>
+                <input id="marketValue" type="number" placeholder="150000" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="plateNumber">Registration Number</label>
+              <div class="input-wrapper">
+                <span class="input-icon"><i class="fa-solid fa-id-card"></i></span>
+                <input id="plateNumber" type="text" placeholder="ABC 123" />
+              </div>
+            </div>
+            <div class="button-group">
+              <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+              <button type="button" class="btn btn-next" onclick="nextStep(2)">Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Coverage Selection -->
+          <div class="form-step" data-step="3">
+            <h3>Step 3: Coverage Selection</h3>
+            <div class="coverage-options">
+              <label class="coverage-card">
+                <input type="radio" name="coverage" value="Third Party" checked required />
+                <div class="coverage-content">
+                  <div class="coverage-title">Third Party</div>
+                  <div class="coverage-desc">Basic coverage for third-party liability</div>
+                </div>
+              </label>
+              <label class="coverage-card">
+                <input type="radio" name="coverage" value="Third Party Fire & Theft" />
+                <div class="coverage-content">
+                  <div class="coverage-title">Third Party Fire & Theft</div>
+                  <div class="coverage-desc">Includes fire and theft protection</div>
+                </div>
+              </label>
+              <label class="coverage-card">
+                <input type="radio" name="coverage" value="Comprehensive" />
+                <div class="coverage-content">
+                  <div class="coverage-title">Comprehensive</div>
+                  <div class="coverage-desc">Full coverage including damage to your vehicle</div>
+                </div>
+              </label>
+            </div>
+            <div class="button-group">
+              <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+              <button type="button" class="btn btn-primary-large" id="calculateBtn">Calculate Premium</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result Section -->
+  <section id="resultSection" class="result-section hidden">
+    <div class="result-container">
+      <div class="result-card">
+        <div class="result-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <h2>Your Quote Summary</h2>
+        
+        <div class="premium-display">
+          <div class="premium-label">Annual Premium</div>
+          <div class="premium-amount">
+            <span class="currency">ZMW</span>
+            <span class="amount" id="premiumAmount">0</span>
+          </div>
+          <div class="premium-period">per year</div>
+        </div>
+
+        <div class="quote-details">
+          <div class="detail-row">
+            <span class="detail-label">Vehicle Type</span>
+            <span class="detail-value" id="resVehicleType">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Market Value</span>
+            <span class="detail-value" id="resMarketValue">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Coverage Type</span>
+            <span class="detail-value" id="resCoverageType">-</span>
+          </div>
+        </div>
+
+        <div class="calculation-breakdown">
+          <h4>Calculation Details</h4>
+          <div class="breakdown-items">
+            <div class="breakdown-item">
+              <span>Base Rate</span>
+              <span id="baseRate">5%</span>
+            </div>
+            <div class="breakdown-item">
+              <span>Vehicle Risk Factor</span>
+              <span id="vehicleRisk">1.0x</span>
+            </div>
+            <div class="breakdown-item">
+              <span>Coverage Factor</span>
+              <span id="coverageFactor">1.0x</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary-large" id="saveQuoteBtn">Save Quote</button>
+          <button class="btn btn-primary-large hidden" id="payBtn">Pay Now</button>
+          <button class="btn btn-secondary" onclick="resetForm()">Get Another Quote</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <h2>About Wenchi Insurance</h2>
+      <p>We are committed to providing transparent, affordable motor insurance solutions to customers across the region. Our platform combines cutting-edge technology with industry expertise to deliver the best insurance experience.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Wenchi Insurance</h4>
+        <p>Professional motor insurance coverage you can trust.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: info@wenchi.com<br>Phone: +260 96 123 4567</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#quote">Get Quote</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Wenchi Motor Insurance. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Paystack inline script (replace if using another gateway) -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('SW registered', reg))
+          .catch(err => console.error('SW registration failed', err));
+      });
+    }
+  </script>
+</body>
+</html>

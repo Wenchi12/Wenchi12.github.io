@@ -1,0 +1,33 @@
+/* Local replacements for the Font Awesome icons used across the app. */
+
+.fa-solid {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: var(--fa-icon) center / contain no-repeat;
+  mask: var(--fa-icon) center / contain no-repeat;
+}
+
+.fa-solid.fa-bars { --fa-icon: url("../assets/icons/fa/bars.svg"); }
+.fa-solid.fa-bolt { --fa-icon: url("../assets/icons/fa/bolt.svg"); }
+.fa-solid.fa-bullseye { --fa-icon: url("../assets/icons/fa/bullseye.svg"); }
+.fa-solid.fa-car-side { --fa-icon: url("../assets/icons/fa/car-side.svg"); }
+.fa-solid.fa-chart-line { --fa-icon: url("../assets/icons/fa/chart-line.svg"); }
+.fa-solid.fa-chart-simple { --fa-icon: url("../assets/icons/fa/chart-simple.svg"); }
+.fa-solid.fa-circle-check { --fa-icon: url("../assets/icons/fa/circle-check.svg"); }
+.fa-solid.fa-dollar-sign { --fa-icon: url("../assets/icons/fa/dollar-sign.svg"); }
+.fa-solid.fa-envelope { --fa-icon: url("../assets/icons/fa/envelope.svg"); }
+.fa-solid.fa-file-csv { --fa-icon: url("../assets/icons/fa/file-csv.svg"); }
+.fa-solid.fa-file-lines { --fa-icon: url("../assets/icons/fa/file-lines.svg"); }
+.fa-solid.fa-id-card { --fa-icon: url("../assets/icons/fa/id-card.svg"); }
+.fa-solid.fa-lock { --fa-icon: url("../assets/icons/fa/lock.svg"); }
+.fa-solid.fa-mobile-screen-button { --fa-icon: url("../assets/icons/fa/mobile-screen-button.svg"); }
+.fa-solid.fa-money-bill-transfer { --fa-icon: url("../assets/icons/fa/money-bill-transfer.svg"); }
+.fa-solid.fa-money-bill-wave { --fa-icon: url("../assets/icons/fa/money-bill-wave.svg"); }
+.fa-solid.fa-phone { --fa-icon: url("../assets/icons/fa/phone.svg"); }
+.fa-solid.fa-rotate { --fa-icon: url("../assets/icons/fa/rotate.svg"); }
+.fa-solid.fa-shield-halved { --fa-icon: url("../assets/icons/fa/shield-halved.svg"); }
+.fa-solid.fa-user { --fa-icon: url("../assets/icons/fa/user.svg"); }
