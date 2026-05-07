@@ -2,9 +2,35 @@
 
 **Stack:** React, Node.js, Socket.io
 
-A live-update dashboard built for tracking cryptocurrency portfolios and market prices.
+A full-stack crypto dashboard that delivers live price updates and portfolio value calculations over WebSockets.
 
-Key highlights:
-- WebSockets-based real-time data updates
-- Clean handling of async UI state
-- Improved understanding of failure cases and stale-state prevention
+## Features
+
+- Real-time market updates using Socket.io
+- Portfolio summary that calculates holdings value from current prices
+- Market cards with price, 24h change, volume, and personal holding value
+- Connection status indicator for live feed health
+
+## Local setup
+
+```bash
+cd real-time-crypto-tracker/client
+npm install
+npm start
+```
+
+In a separate terminal:
+
+```bash
+cd real-time-crypto-tracker/server
+npm install
+npm start
+```
+
+## Project structure
+
+- `client/src/App.tsx` — React client and socket connection logic
+- `client/src/components/CryptoList.tsx` — market asset cards
+- `client/src/components/PortfolioSummary.tsx` — portfolio value summary
+- `server/server.js` — Socket.io server and market simulation
+

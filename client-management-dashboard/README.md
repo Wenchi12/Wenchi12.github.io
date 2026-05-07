@@ -2,9 +2,34 @@
 
 **Stack:** React, TypeScript, Redux, PostgreSQL
 
-This project is an internal dashboard focused on reporting workflows, records management, and operational insights.
+An internal dashboard built to manage client records, operational reporting, and daily business workflows without overwhelming non-technical users.
 
-Key highlights:
-- Maintains responsiveness for large data tables
-- Uses virtualization and careful render control
-- Reduced bundle weight and improved usability for reporting flows
+## Features
+
+- Responsive client table with virtualized rows for smooth scrolling over large datasets
+- KPI summary cards for revenue, active clients, and operational health
+- Redux-powered state management with clear separation between client data and UI state
+- Performance-focused UI that minimizes unnecessary rerenders and keeps the interface responsive
+
+## Local setup
+
+```bash
+cd client-management-dashboard
+npm install
+npm start
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+## Project structure
+
+- `src/App.tsx` — main dashboard layout
+- `src/components/ClientTable.tsx` — virtualized records table
+- `src/components/DashboardStats.tsx` — KPI summary cards
+- `src/store/clientsSlice.ts` — client state and reducer logic
+- `public/index.html` — application entry template
+

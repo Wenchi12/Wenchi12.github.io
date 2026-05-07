@@ -2,12 +2,15 @@
 
 **Stack:** TypeScript, Jest, Rollup
 
-A reusable React hook for localStorage persistence with SSR-safe handling.
+A reusable React hook for localStorage persistence with SSR-safe handling and a clean TypeScript API.
 
-Key highlights:
-- Avoids hydration mismatches in server-rendered apps
-- Clean API surface for persistence logic
-- Includes testing and package documentation work
+## Features
+
+- SSR-safe browser access guard
+- JSON persistence for primitive and object values
+- Functional update support mirroring `useState`
+- Graceful error handling for read/write failures
+- Packaged for distribution with Rollup and tests
 
 ## Installation
 
@@ -41,13 +44,24 @@ function MyComponent() {
 useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void]
 ```
 
-- `key`: The localStorage key to store the value under
-- `initialValue`: The initial value to use if no stored value exists
-- Returns: `[storedValue, setValue]` where `setValue` can accept a new value or an updater function
+- `key`: The localStorage key used for persistence
+- `initialValue`: Value returned when no stored entry exists
+- Returns: `[value, setValue]`
 
-## Features
+## Local setup
 
-- **SSR Safe**: Works correctly in server-rendered environments
-- **TypeScript Support**: Full type safety
-- **Error Handling**: Gracefully handles localStorage errors
-- **Functional Updates**: Supports updater functions like React's `useState`
+```bash
+cd use-local-storage-hook
+npm install
+npm test
+npm run build
+```
+
+## Folder structure
+
+- `src/useLocalStorage.ts` — hook implementation
+- `src/index.ts` — package exports
+- `tests/useLocalStorage.test.ts` — Jest-based behavior tests
+- `rollup.config.js` — build configuration
+- `tsconfig.json` — TypeScript settings
+
